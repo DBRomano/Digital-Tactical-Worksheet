@@ -448,10 +448,11 @@
         <div class="preset-buttons collapsible-content" id="rescuePresets"></div>
       </div>
 
-      <div class="preset-group collapsible-group">
-        <div class="preset-title collapsible-header">RIT/div>
-        <div class="preset-buttons collapsible-content" id="ritPresets"></div>
-      </div>
+     <div class="preset-group collapsible-group">
+      <div class="preset-title collapsible-header">RIT</div>
+      <div class="preset-buttons collapsible-content" id="ritPresets"></div>
+    </div>
+
 
       <div class="preset-group collapsible-group">
         <div class="preset-title collapsible-header">Medic Units</div>
@@ -1062,9 +1063,10 @@ buildPresetButtons("rescuePresets", [
   "R-12","R-15"
 ], "Rescue","rescue","preset-rescue");
 
+
 /* Special (RIT color) */
 buildPresetButtons("ritPresets", [
-  "HR-1","HAZ-1", "HR1 Outside","HAZ1 Outside""
+  "HR-1","HAZ-1", "HR1 Outside","HAZ1 Outside"
 ], "RIT","rit","preset-rit");
 
 /* Command (Chief color) */
@@ -1125,6 +1127,8 @@ function startTileDragMouse(e) {
 
 function tileDragMouse(e) {
   if (!draggingTile) return;
+
+   mouseMovedDuringPress = true;  // <-- cancel long-press-to-note if it becomes a drag
 
   const ws = mapWrapper.getBoundingClientRect();
   let x = e.clientX - ws.left - dragOffsetX;
@@ -1472,6 +1476,7 @@ saveState();
 </body>
 
 </html>
+
 
 
 
