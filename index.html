@@ -366,6 +366,32 @@
       cursor: grabbing;
       background: #000;
     }
+/* ===== Tablet / iPad layout ===== */
+@media (max-width: 1100px) {
+
+  /* Stack sidebar on top, map below */
+  #board {
+    flex-direction: column;
+  }
+
+  /* Sidebar becomes full-width and scrollable */
+  #sidebar {
+    width: 100%;
+    max-height: 35vh;
+    border-right: none;
+    border-bottom: 1px solid #444;
+    overflow-y: auto;
+  }
+
+  /* Worksheet area fills the rest of the screen */
+  #workspaceContainer {
+    flex: 1;
+  }
+
+  #worksheet {
+    padding: 10px;
+  }
+}
 
     @media print {
       body { background: #fff; display: block; }
@@ -1510,6 +1536,7 @@ saveState();
 </body>
 
 </html>
+
 
 
 
