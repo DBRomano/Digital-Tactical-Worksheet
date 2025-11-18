@@ -1473,9 +1473,21 @@ saveState();
 <div style="position:absolute; bottom:4px; right:8px; font-size:10px; color:#bbb;">
   Created by DC Daniel Romano (OFD)
 </div>
+    <script>
+  if ("serviceWorker" in navigator) {
+    window.addEventListener("load", () => {
+      navigator.serviceWorker.register("service-worker.js")
+        .catch(err => {
+          console.error("Service worker registration failed:", err);
+        });
+    });
+  }
+</script>
+
 </body>
 
 </html>
+
 
 
 
