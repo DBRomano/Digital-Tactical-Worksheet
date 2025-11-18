@@ -546,7 +546,9 @@ let tabs = [];
 let currentTabId = null;
 
 function initTabs() {
-  const defaultTab = {
+
+  // TAB 1 — Main Board
+  const mainBoard = {
     id: 1,
     name: "Main Board",
     bgImage: "worksheet.png",
@@ -555,10 +557,25 @@ function initTabs() {
     historyIndex: -1,
     canvasDataURL: null
   };
-  tabs.push(defaultTab);
-  currentTabId = 1;
+
+  // TAB 2 — Blank Sheet
+  const blankSheet = {
+    id: 2,
+    name: "Blank Sheet",
+    bgImage: "blank_worksheet.png",   // <-- make sure this file exists in your repo
+    tiles: [],
+    history: [],
+    historyIndex: -1,
+    canvasDataURL: null
+  };
+
+  tabs = [mainBoard, blankSheet];
+  currentTabId = 1; // start on Main Board
+
   renderTabBar();
+  loadTabFromMemory(1); // load Main Board's background/image
 }
+
 
 function renderTabBar() {
   const existingTabs = tabBar.querySelectorAll(".tab-item");
@@ -1491,6 +1508,7 @@ saveState();
 </body>
 
 </html>
+
 
 
 
