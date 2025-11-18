@@ -1464,16 +1464,7 @@ document.addEventListener("touchend", () => {
   notesDrag = false;
   floatingNotes.classList.remove("dragging");
 });
-
-/* ===== Init ===== */
-initTabs(); 
-setMode("move");
-saveState();
-</script>
-<div style="position:absolute; bottom:4px; right:8px; font-size:10px; color:#bbb;">
-  Created by DC Daniel Romano (OFD)
-</div>
-    <script>
+     
   if ("serviceWorker" in navigator) {
     window.addEventListener("load", () => {
       navigator.serviceWorker.register("service-worker.js")
@@ -1483,6 +1474,16 @@ saveState();
     });
   }
 </script>
+
+/* ===== Init ===== */
+initTabs(); 
+setMode("move");
+saveState();
+</script>
+<div style="position:absolute; bottom:4px; right:8px; font-size:10px; color:#bbb;">
+  Created by DC Daniel Romano (OFD)
+</div>
+ 
 
 </body>
 
