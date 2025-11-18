@@ -398,6 +398,7 @@
 
     <div class="spacer"></div>
 
+    <button id="btnAutoStack" title="Auto Organize">Stack</button>
     <button id="btnModeMove" title="Move Tiles">Move</button>
     <button id="btnModePen" title="Draw Lines">Draw</button>
     <button id="btnModeErase" title="Erase Drawing">Erase</button>
@@ -406,7 +407,7 @@
 
     <div class="spacer"></div>
 
-    <button id="btnAutoStack" title="Auto Organize">Stack</button>
+   
     <button id="btnChangeBg" title="Upload Image/Map">Change Worksheet</button>
     <button id="btnDelete" title="Delete Selected">Del</button>
     <button id="btnUndo">Undo</button>
@@ -1062,8 +1063,8 @@ buildPresetButtons("rescuePresets", [
 ], "Rescue","rescue","preset-rescue");
 
 /* Special (RIT color) */
-buildPresetButtons("specialPresets", [
-  "HR-1","HAZ-1"
+buildPresetButtons("ritPresets", [
+  "HR-1","HAZ-1", "HR1 Outside","HAZ1 Outside""
 ], "RIT","rit","preset-rit");
 
 /* Command (Chief color) */
@@ -1078,10 +1079,10 @@ buildPresetButtons("towerOutsidePresets", [
   "T-9 Outside","T-10 Outside","T-11 Outside","T-15 Outside"
 ], "Tower","tower","preset-tower");
 
-/* RIT Outside Team */
-buildPresetButtons("ritOutsidePresets", [
+/* Medic Unit Team */
+buildPresetButtons("medicUnitPresets", [
   "HR1 Outside","HAZ1 Outside"
-], "RIT","rit","preset-rit");
+], "Rescue","rescue","preset-rescue");
 
 /* ===== Tile drag: mouse ===== */
 function startTileDragMouse(e) {
@@ -1471,5 +1472,6 @@ saveState();
 </body>
 
 </html>
+
 
 
