@@ -446,6 +446,7 @@
     <button id="btnSaveLayout">Save</button>
     <button id="btnLoadLayout">Load</button>
     <button id="btnChangeBg" title="Upload Image/Map">Upload Worksheet</button>
+    <button id="btnFullscreen">Fullscreen</button>
     <button id="btnHelp">Help</button>
 
     <span id="modeLabel" class="mode-indicator">Mode: Move/Select</span>
@@ -1071,6 +1072,33 @@ document.getElementById("btnOther").onclick  = () => createTile("Other","other")
 document.getElementById("btnHelp").onclick = () => {
   window.open("ICS_Program_Instruction_Manual.txt", "_blank");
 };
+  const btnFullscreen = document.getElementById("btnFullscreen");
+
+if (btnFullscreen) {
+  btnFullscreen.addEventListener("click", () => {
+    if (!document.fullscreenElement) {
+      // ENTER fullscreen
+      document.documentElement.requestFullscreen().catch(err => {
+        console.log("Fullscreen failed:", err);
+      });
+      btnFullscreen.textContent = "Exit Fullscreen";
+    } else {
+      // EXIT fullscreen
+      document.exitFullscreen();
+      btnFullscreen.textContent = "Fullscreen";
+    }
+  });
+}
+
+// Update button text if user exits fullscreen by ESC
+document.addEventListener("fullscreenchange", () => {
+  if (!document.fullscreenElement) {
+    btnFullscreen.textContent = "Fullscreen";
+  } else {
+    btnFullscreen.textContent = "Exit Fullscreen";
+  }
+});
+
 
 
 /* ===== Presets ===== */
@@ -1536,6 +1564,7 @@ saveState();
 </body>
 
 </html>
+
 
 
 
