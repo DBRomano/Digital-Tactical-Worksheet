@@ -670,7 +670,7 @@ function loadTabFromMemory(id) {
 }
 
 btnAddTab.onclick = () => {
-  const name = prompt("Enter Name for new Tab:", "Sector " + (tabs.length + 1));
+  const name = prompt("Enter Name for new Tab:", "Sheet " + (tabs.length + 1));
   if (!name) return;
 
   // We default to worksheet.png, user can change it later with "Change Map"
@@ -1471,3 +1471,4 @@ saveState();
 </body>
 
 </html>
+
